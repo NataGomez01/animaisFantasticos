@@ -1,9 +1,8 @@
-export default class animaNumeros {
+export default class AnimaNumeros {
   constructor(numeros, observerTarget, observerClass) {
     this.numeros = document.querySelectorAll(numeros);
-    this.observerClass = observerClass;
     this.observerTarget = document.querySelectorAll(observerTarget);
-
+    this.observerClass = observerClass;
     this.handleMutation = this.handleMutation.bind(this);
   }
 
@@ -30,7 +29,7 @@ export default class animaNumeros {
   handleMutation(mutation) {
     if (mutation[0].target.classList.contains(this.observerClass)) {
       this.observer.disconnect();
-      this.animaNumeros();
+      this.AnimaNumeros();
     }
   }
 
