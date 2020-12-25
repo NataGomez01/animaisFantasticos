@@ -2,7 +2,7 @@ export default class animaNumeros {
   constructor(numeros, observerTarget, observerClass) {
     this.numeros = document.querySelectorAll(numeros);
     this.observerClass = observerClass;
-    this.observerTarget = document.querySelector(observerTarget);
+    this.observerTarget = document.querySelectorAll(observerTarget);
 
     this.handleMutation = this.handleMutation.bind(this);
   }
