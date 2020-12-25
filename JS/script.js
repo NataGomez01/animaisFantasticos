@@ -2,7 +2,7 @@ import ScrollSuave from "./modules/scroll-suave.js";
 import Accordion from "./modules/accordion.js";
 import TabNav from "./modules/tab-nav.js";
 import Modal from "./modules/modal.js";
-import initTooltip from "./modules/tooltip.js";
+import Tooltip from "./modules/tooltip.js";
 import initDropdown from "./modules/dropdown.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
@@ -29,7 +29,9 @@ const modal = new Modal(
 );
 modal.init();
 
-initTooltip();
+const ToolTip = new Tooltip("[data-tooltip]");
+ToolTip.init();
+
 initDropdown();
 initMenuMobile();
 initFuncionamento();
