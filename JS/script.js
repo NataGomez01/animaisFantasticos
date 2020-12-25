@@ -9,6 +9,7 @@ import FetchBitcoin from "./modules/fetch-bitcoin.js";
 import initFuncionamento from "./modules/funcionamento.js";
 import fetchAnimais from "./modules/fetch-animais.js";
 import ScrollAnimation from "./modules/scroll-animacao.js";
+import { SlideNav } from "./modules/slide.js";
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
@@ -32,12 +33,17 @@ modal.init();
 const ToolTip = new Tooltip("[data-tooltip]");
 ToolTip.init();
 
-fetchAnimais("../../animais.json", ".numeros-grid");
+fetchAnimais("./animaisApi.json", ".numeros-grid");
 
 FetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
 
 const scrollAnimation = new ScrollAnimation('[data-anime="scroll"]');
 scrollAnimation.init();
+
+const slide = new SlideNav(".slide", ".wrapper");
+slide.init();
+
+slide.addControl(".custom-controls");
 
 initDropdown();
 initMenuMobile();
