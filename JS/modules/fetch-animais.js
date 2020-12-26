@@ -16,7 +16,7 @@ export default function fetchAnimais(url, target) {
     numerosGrid.appendChild(divAnimal);
   }
 
-  function animaNumeros() {
+  function animaAnimaisNumeros() {
     const animaNumeros = new AnimaNumeros("[data-numero]", ".numeros", "ativo");
     animaNumeros.init();
   }
@@ -26,11 +26,11 @@ export default function fetchAnimais(url, target) {
       const animaisResposta = await fetch(url);
       const animaisJSON = await animaisResposta.json();
       animaisJSON.forEach((animal) => preencherAnimais(animal));
-      animaNumeros();
+      animaAnimaisNumeros();
     } catch (erro) {
       console.log(erro);
     }
-
-    return criarAnimais;
   }
+
+  return criarAnimais();
 }
